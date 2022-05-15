@@ -1,7 +1,7 @@
 import 'medicalRecord.dart';
 import 'patient.dart';
 
-class NeurologistRecord extends MedicalRecord {
+class NeurologistRecord extends MedicalRecord<NeurologistRecord> {
   String _motor;
   String _reflexes;
   String _sensory;
@@ -56,7 +56,7 @@ class NeurologistRecord extends MedicalRecord {
   }
 
   @override
-  modify(MedicalRecord neurologistRec) {
+  modify(NeurologistRecord neurologistRec) {
     this.id = neurologistRec.id;
     this.creationDate = neurologistRec.creationDate;
     this.weight = neurologistRec.weight;

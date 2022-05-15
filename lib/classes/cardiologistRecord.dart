@@ -1,13 +1,14 @@
 import 'medicalRecord.dart';
 import 'patient.dart';
+import 'package:flutter/foundation.dart';
 
-class CardiologistRecord extends MedicalRecord {
+class CardiologistRecord extends MedicalRecord<CardiologistRecord> {
   int _QRSduration;
   int _QTc;
   int _Pwave;
 
   CardiologistRecord(
-      this._QRSduration,
+      @required this._QRSduration,
       this._Pwave,
       this._QTc,
       id,
@@ -38,7 +39,7 @@ class CardiologistRecord extends MedicalRecord {
     return _QTc;
   }
 
-  void set Qtc(int QTc) {
+  void set QTc(int QTc) {
     this._QTc = QTc;
   }
 
@@ -65,5 +66,8 @@ class CardiologistRecord extends MedicalRecord {
     heartRate = cardiologistRec.heartRate;
     bloodPressure = cardiologistRec.bloodPressure;
     saturation = cardiologistRec.saturation;
+    QRSduration = cardiologistRec.QRSduration;
+    QTc = cardiologistRec.QTc;
+    Pwave = cardiologistRec.Pwave;
   }
 }

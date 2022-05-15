@@ -2,7 +2,7 @@ import 'package:shortpaper_dart/classes/patient.dart';
 
 import 'medicalRecord.dart';
 
-class BaseRecord extends MedicalRecord{
+class BaseRecord extends MedicalRecord<BaseRecord>{
   
   BaseRecord(String id, DateTime creationDate, int weight, int height, String personalHistory, int heartRate, int bloodPressure, int saturation, List<MedicalRecord> registers) : super(id, creationDate, weight, height, personalHistory, heartRate, bloodPressure, saturation, registers);
 

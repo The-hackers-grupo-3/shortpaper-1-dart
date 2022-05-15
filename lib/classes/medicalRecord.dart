@@ -1,6 +1,6 @@
 import 'patient.dart';
 
-abstract class MedicalRecord{
+abstract class MedicalRecord<T>{
 
   String _id;
   DateTime _creationDate;
@@ -87,7 +87,7 @@ abstract class MedicalRecord{
   }
 
   create(Patient patient);
-  modify(MedicalRecord medicalRecord);
+  modify(T medicalRecord);
 
   addMedicalRecord(MedicalRecord medicalRecord){
     this._registers.add(medicalRecord);
