@@ -40,6 +40,10 @@ dart pub get
 
 ### Correr el proyecto
 
+```bash
+dart run
+```
+
 **Output:**
 
 ```bash
