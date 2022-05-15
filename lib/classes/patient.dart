@@ -1,5 +1,10 @@
+import 'package:shortpaper_dart/classes/Appointment/appointment.dart';
+import 'package:shortpaper_dart/interfaces/IAppointmentManagerDoctor.dart';
+
 import '../enum/paymentStatus.dart';
+import '../interfaces/IAppointmentManagerPatient.dart';
 import 'MedicalRecord/medicalRecord.dart';
+import 'doctor.dart';
 
 class Patient{
 
@@ -10,10 +15,10 @@ class Patient{
   int _height;
   String _phone;
   String _email;
-  PaymentStatus _paymentStatus;
   MedicalRecord _medicalRecord;
+  IAppointmentManagerPatient appointmentManager;
 
-  Patient(this._name, this._birthday, this._profession, this._weight, this._height, this._phone, this._email, this._paymentStatus, this._medicalRecord);
+  Patient(this._name, this._birthday, this._profession, this._weight, this._height, this._phone, this._email, this._medicalRecord, this.appointmentManager);
 
 //------------------------------------------
 //--------------GETTER & SETTER-------------
@@ -75,16 +80,16 @@ class Patient{
     this._email = email;
   }
 
-  PaymentStatus get paymentStatus{
-    return this._paymentStatus;
-  }
-
-  void set paymentStatus(PaymentStatus paymentStatus){
-    this._paymentStatus = paymentStatus;
-  }
-
   MedicalRecord get medicalRecord{
     return _medicalRecord;
+  }
+
+  requestAppoinment(Doctor doctor){
+    this.appointmentManager.requestAppoinment(doctor, this, DateTime.now());
+  }
+
+  cancelAppointment(Appointment appointment){
+    this.appointmentManager.cancelAppointment(appointment);
   }
 
 }

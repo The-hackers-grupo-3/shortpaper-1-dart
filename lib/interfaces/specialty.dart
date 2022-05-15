@@ -1,7 +1,7 @@
 import '../classes/MedicalRecord/medicalRecord.dart';
 import '../classes/patient.dart';
 
-class Specialty{
-  void createMedicalRecord(Patient patient, MedicalRecord medicalRecord){}
-  void modifyMedicalRecord(MedicalRecord medicalRecord){}
+abstract class Specialty{
+  void createMedicalRecord(Patient patient, MedicalRecord medicalRecord);
+  void modifyMedicalRecord(MedicalRecord medicalRecord);
 }

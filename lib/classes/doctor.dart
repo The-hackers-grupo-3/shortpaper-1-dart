@@ -1,13 +1,17 @@
+import 'package:shortpaper_dart/classes/Appointment/appointment.dart';
+import 'package:shortpaper_dart/interfaces/IAppointmentManagerDoctor.dart';
+
 import '../interfaces/specialty.dart';
 import 'patient.dart';
 
 class Doctor{
 
   String _name;
-  List<Patient> _patients;
+  List<Patient>? _patients;
   List<Specialty> _specialties;
+  IAppointmentManagerDoctor appointmentManager;
 
-  Doctor(this._name, this._patients, this._specialties);
+  Doctor(this._name, this._specialties, this.appointmentManager);
 
 //------------------------------------------
 //--------------GETTER & SETTER-------------
@@ -21,7 +25,7 @@ class Doctor{
     this._name = name;
   }
 
-  List<Patient> get patients{
+  List<Patient>? get patients{
     return this._patients;
   }
 
@@ -34,7 +38,21 @@ class Doctor{
   }
 
   adPatient(Patient patient){
-    this._patients.add(patient);
+    this._patients?.add(patient);
+  }
+
+  accepAppointment(Appointment appointment){
+    this.appointmentManager.acceptAppointment(appointment);
+  }
+
+  cancelAppointment(Appointment appointment){
+    this.appointmentManager.cancelAppointment(appointment);
+  }
+
+  seeAppointment(){
+    this.appointmentManager.seeAppointments().forEach((element) {
+      print('Cita con el paciente: ${element.patient.name} el día ${element.appointmentDate}');
+    });
   }
 
 }
