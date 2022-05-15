@@ -1,4 +1,4 @@
-import 'patient.dart';
+import '../patient.dart';
 
 abstract class MedicalRecord<T>{
 

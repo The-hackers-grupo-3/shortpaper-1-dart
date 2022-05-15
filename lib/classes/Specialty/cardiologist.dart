@@ -1,6 +1,6 @@
-import '../interfaces/specialty.dart';
-import 'medicalRecord.dart';
-import 'patient.dart';
+import '../../interfaces/specialty.dart';
+import '../MedicalRecord/medicalRecord.dart';
+import '../patient.dart';
 
 class Cardiologist implements Specialty{
 

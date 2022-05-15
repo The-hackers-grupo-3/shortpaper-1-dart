@@ -1,5 +1,5 @@
 import 'medicalRecord.dart';
-import 'patient.dart';
+import '../patient.dart';
 import 'package:flutter/foundation.dart';
 
 class CardiologistRecord extends MedicalRecord<CardiologistRecord> {

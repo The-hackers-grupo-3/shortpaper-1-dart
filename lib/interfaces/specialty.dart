@@ -1,4 +1,4 @@
-import '../classes/medicalRecord.dart';
+import '../classes/MedicalRecord/medicalRecord.dart';
 import '../classes/patient.dart';
 
 class Specialty{

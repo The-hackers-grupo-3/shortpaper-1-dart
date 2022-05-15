@@ -1,5 +1,5 @@
 import '../enum/paymentStatus.dart';
-import 'medicalRecord.dart';
+import 'MedicalRecord/medicalRecord.dart';
 
 class Patient{
 

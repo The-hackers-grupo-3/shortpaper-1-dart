@@ -1,5 +1,5 @@
 import 'medicalRecord.dart';
-import 'patient.dart';
+import '../patient.dart';
 
 class NeurologistRecord extends MedicalRecord<NeurologistRecord> {
   String _motor;

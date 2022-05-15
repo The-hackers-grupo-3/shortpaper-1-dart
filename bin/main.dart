@@ -1,11 +1,11 @@
-import 'package:shortpaper_dart/classes/baseRecord.dart';
+import 'package:shortpaper_dart/classes/MedicalRecord/baseRecord.dart';
 import 'package:shortpaper_dart/enum/paymentStatus.dart';
 import 'package:shortpaper_dart/shortpaper_dart.dart' as shortpaper_dart;
-import '../lib/classes/cardiologist.dart';
+import '../lib/classes/Specialty/cardiologist.dart';
 import '../lib/classes/doctor.dart';
-import '../lib/classes/medicalRecord.dart';
+import '../lib/classes/MedicalRecord/medicalRecord.dart';
 import '../lib/classes/patient.dart';
-import '../lib/classes/cardiologistRecord.dart';
+import '../lib/classes/MedicalRecord/cardiologistRecord.dart';
 
 void main() {
 ////////////////Modificar Registro Médico de un cardiologo
