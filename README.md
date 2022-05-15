@@ -16,7 +16,7 @@
 
 ## Iniciar el proyecto
 
-Se debe tener [Dart](https://dart.dev/get-dart).
+Se debe tener [Dart](https://dart.dev/get-dart) como minimo la versión 2.16.1 .
 
 ### Clonar el repo
 
@@ -30,6 +30,12 @@ https://github.com/The-hackers-grupo-3/shortpaper-1-dart.git
 
 ```bash
 git@github.com:The-hackers-grupo-3/shortpaper-1-dart.git
+```
+
+### Instalar dependencias
+
+```bash
+dart pub get
 ```
 
 ### Correr el proyecto
