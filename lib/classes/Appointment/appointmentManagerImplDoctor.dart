@@ -46,8 +46,4 @@ class AppointmentManagerImplDoctor implements IAppointmentManagerDoctor{
     return this._appointments;
   }
 
-  addAppointment(Appointment appointment){
-    this._appointments.add(appointment);
-  }
-
 }
