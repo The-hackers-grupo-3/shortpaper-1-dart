@@ -24,12 +24,7 @@ class AppointmentManagerImplDoctor implements IAppointmentManagerDoctor{
     appointment.status = MedicalAppointmentState.CANCELED;
     print('El Doctor ${appointment.doctor.name} cancelo la cita solicitada por el paciente ${appointment.patient.name} para el dia ${appointment.appointmentDate}.');
   }
-
-  @override
-  void completeAppoinment(Appointment appointment, Specialty specialty, MedicalRecord medicalRecord) {
-    // TODO: implement completeAppoinment
-  }
-
+  
   @override
   Appointment searchAppointment(Appointment appointment) {
     for (var i = 0; i < _appointments.length; i++) {
