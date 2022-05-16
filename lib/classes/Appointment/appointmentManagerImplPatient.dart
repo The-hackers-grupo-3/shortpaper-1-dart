@@ -16,13 +16,18 @@ class AppointmentManagerImplPatient implements IAppointmentManagerPatient{
     this._appointments.add(appointment);
     doctor.appointmentManager.seeAppointments().add(appointment);
     
-    print('El paciente ${patient.name} ha solicitado una cita al Doctor ${doctor.name} para el dia ${date}.');
+    print('El paciente ${patient.name} ha solicitado una cita al Doctor ${doctor.name} para el dia ${date}.\n\n');
   }
   
   @override
   void cancelAppointment(Appointment appointment) {
     appointment.status = MedicalAppointmentState.CANCELED;
     print('El Paciente ${appointment.doctor.name} cancelo la cita agendada ${appointment.patient.name} para el dia ${appointment.appointmentDate}.');
+  }
+
+  @override
+  List<Appointment> seeAppointments() {
+    return this._appointments;
   }
 
 }

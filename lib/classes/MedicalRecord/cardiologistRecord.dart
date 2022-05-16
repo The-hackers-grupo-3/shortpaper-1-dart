@@ -10,7 +10,7 @@ class CardiologistRecord extends MedicalRecord<CardiologistRecord> {
   int _Pwave;
 
   CardiologistRecord(
-      @required this._QRSduration,
+      this._QRSduration,
       this._Pwave,
       this._QTc,
       id,

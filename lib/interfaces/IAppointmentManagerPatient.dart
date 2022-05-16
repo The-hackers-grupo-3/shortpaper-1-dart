@@ -6,4 +6,5 @@ import '../enum/medicalAppointmentState.dart';
 abstract class IAppointmentManagerPatient{
   void requestAppoinment(Doctor doctor, Patient patient, DateTime date);
   void cancelAppointment(Appointment appointment);
+  List<Appointment> seeAppointments();
 }
