@@ -1,10 +1,26 @@
+import 'package:shortpaper_dart/classes/notifier.dart';
 import 'package:shortpaper_dart/classes/patient.dart';
 
 import 'medicalRecord.dart';
 
-class BaseRecord extends MedicalRecord<BaseRecord>{
-  
-  BaseRecord(String id, DateTime creationDate, int weight, int height, String personalHistory, int heartRate, int bloodPressure, int saturation, List<MedicalRecord> registers) : super(id, creationDate, weight, height, personalHistory, heartRate, bloodPressure, saturation, registers);
+class BaseRecord extends MedicalRecord<BaseRecord> {
+  BaseRecord(
+      String id,
+      DateTime creationDate,
+      int weight,
+      int height,
+      String personalHistory,
+      int heartRate,
+      int bloodPressure,
+      int saturation,
+      List<MedicalRecord> registers,
+      Notifier notifier)
+      : super(id, creationDate, weight, height, personalHistory, heartRate,
+            bloodPressure, saturation, registers, notifier);
+
+  Notifier get notifier {
+    return notifier;
+  }
 
   @override
   create(Patient patient) {
@@ -21,6 +37,7 @@ class BaseRecord extends MedicalRecord<BaseRecord>{
     heartRate = baseRecord.heartRate;
     bloodPressure = baseRecord.bloodPressure;
     saturation = baseRecord.saturation;
-  }
 
+    notifier.notify("El doctor ha modificado tu Record Medico");
+  }
 }
