@@ -9,9 +9,9 @@ class Doctor{
   String _name;
   List<Patient>? _patients;
   List<Specialty> _specialties;
-  IAppointmentManagerDoctor _appointmentManager;
+  IAppointmentManagerDoctor appointmentManager;
 
-  Doctor(this._name, this._specialties, this._appointmentManager);
+  Doctor(this._name, this._specialties, this.appointmentManager);
 
 //------------------------------------------
 //--------------GETTER & SETTER-------------
@@ -33,9 +33,6 @@ class Doctor{
     return this._specialties;
   }
 
-  IAppointmentManagerDoctor get appointmentManager{
-    return this.appointmentManager;
-  }
 
   addSpecialty(Specialty specialty){
     this._specialties.add(specialty);
@@ -46,15 +43,15 @@ class Doctor{
   }
 
   accepAppointment(Appointment appointment){
-    this._appointmentManager.acceptAppointment(appointment);
+    this.appointmentManager.acceptAppointment(appointment);
   }
 
   cancelAppointment(Appointment appointment){
-    this._appointmentManager.cancelAppointment(appointment);
+    this.appointmentManager.cancelAppointment(appointment);
   }
 
   seeAppointment(){
-    this._appointmentManager.seeAppointments().forEach((element) {
+    this.appointmentManager.seeAppointments().forEach((element) {
       print('Cita con el paciente: ${element.patient.name} el día ${element.appointmentDate}');
     });
   }

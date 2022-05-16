@@ -32,9 +32,9 @@ class AppointmentManagerImplDoctor implements IAppointmentManagerDoctor {
       }
     }
     return this._appointments[
-        0]; //Esto solo esta para que no chille, nunca deberia retornar esto porque siempre va a recibir una appointment que si esta
+        0]; //Nunca deberia retornar esto porque siempre va a recibir una appointment que si esta
   }
-
+  
   @override
   List<Appointment> seeAppointments() {
     return this._appointments;

@@ -45,16 +45,9 @@ void main() {
 // //Paciente solicita una cita
   patient.appointmentManager.requestAppoinment(doctor, patient, DateTime.now());
 
-  print(
-      'Los appointment de los pacientes $appointmentManagerPatient\n'); //Chequeo
-  print('Los appointment de los doctor $appointmentManagerDoctor\n'); //Chequeo
-
 // //Cancelar la cita
   var appointment = patient.appointmentManager.seeAppointments()[0];
 
   patient.appointmentManager.cancelAppointment(appointment);
-
-  print(
-      'Los appointment de los pacientes $appointmentManagerPatient\n'); //Chequeo
-  print('Los appointment de los doctor $appointmentManagerDoctor\n'); //Chequeo
+  
 }
