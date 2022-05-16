@@ -1,3 +1,5 @@
+import '../notifier.dart';
+
 import 'medicalRecord.dart';
 import '../patient.dart';
 
@@ -18,9 +20,10 @@ class NeurologistRecord extends MedicalRecord<NeurologistRecord> {
       int heartRate,
       int bloodPressure,
       int saturation,
-      List<MedicalRecord> registers)
+      List<MedicalRecord> registers,
+      Notifier notifier)
       : super(id, creationDate, weight, height, personalHistory, heartRate,
-            bloodPressure, saturation, registers);
+            bloodPressure, saturation, registers, notifier);
 
 //------------------------------------------
 //--------------GETTER & SETTER-------------
@@ -28,6 +31,10 @@ class NeurologistRecord extends MedicalRecord<NeurologistRecord> {
 
   String get motor {
     return _motor;
+  }
+
+  Notifier get notifier {
+    return notifier;
   }
 
   void set motor(String motor) {
@@ -65,5 +72,7 @@ class NeurologistRecord extends MedicalRecord<NeurologistRecord> {
     this.heartRate = neurologistRec.heartRate;
     this.bloodPressure = neurologistRec.bloodPressure;
     this.saturation = neurologistRec.saturation;
+
+    this.notifier.notify("El neurologo ha modificado tu record medico");
   }
 }

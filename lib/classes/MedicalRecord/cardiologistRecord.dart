@@ -1,3 +1,5 @@
+import 'package:shortpaper_dart/classes/notifier.dart';
+
 import 'medicalRecord.dart';
 import '../patient.dart';
 import 'package:flutter/foundation.dart';
@@ -19,9 +21,10 @@ class CardiologistRecord extends MedicalRecord<CardiologistRecord> {
       int heartRate,
       int bloodPressure,
       int saturation,
-      List<MedicalRecord> registers)
+      List<MedicalRecord> registers,
+      Notifier notifier)
       : super(id, creationDate, weight, height, personalHistory, heartRate,
-            bloodPressure, saturation, registers);
+            bloodPressure, saturation, registers, notifier);
 
 //------------------------------------------
 //--------------GETTER & SETTER-------------
@@ -41,6 +44,10 @@ class CardiologistRecord extends MedicalRecord<CardiologistRecord> {
 
   void set QTc(int QTc) {
     this._QTc = QTc;
+  }
+
+  Notifier get notifier {
+    return notifier;
   }
 
   int get Pwave {
@@ -69,5 +76,7 @@ class CardiologistRecord extends MedicalRecord<CardiologistRecord> {
     QRSduration = cardiologistRec.QRSduration;
     QTc = cardiologistRec.QTc;
     Pwave = cardiologistRec.Pwave;
+
+    notifier.notify("El cardiologo modifico tu record medico");
   }
 }

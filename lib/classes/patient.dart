@@ -1,13 +1,13 @@
 import 'package:shortpaper_dart/classes/Appointment/appointment.dart';
 import 'package:shortpaper_dart/interfaces/IAppointmentManagerDoctor.dart';
+import 'package:shortpaper_dart/interfaces/eventnotifier.dart';
 
 import '../enum/paymentStatus.dart';
 import '../interfaces/IAppointmentManagerPatient.dart';
 import 'MedicalRecord/medicalRecord.dart';
 import 'doctor.dart';
 
-class Patient{
-
+class Patient implements EventNotifier {
   String _name;
   DateTime _birthday;
   String _profession;
@@ -18,78 +18,93 @@ class Patient{
   MedicalRecord _medicalRecord;
   IAppointmentManagerPatient appointmentManager;
 
-  Patient(this._name, this._birthday, this._profession, this._weight, this._height, this._phone, this._email, this._medicalRecord, this.appointmentManager);
+  Patient(
+      this._name,
+      this._birthday,
+      this._profession,
+      this._weight,
+      this._height,
+      this._phone,
+      this._email,
+      this._medicalRecord,
+      this.appointmentManager);
 
 //------------------------------------------
 //--------------GETTER & SETTER-------------
 //------------------------------------------
 
-  String get name{
+  String get name {
     return _name;
   }
 
-  void set name(String name){
+  void set name(String name) {
     this._name = name;
   }
 
-  DateTime get birthday{
+  DateTime get birthday {
     return _birthday;
   }
 
-  void set birthday(DateTime birthday){
+  void set birthday(DateTime birthday) {
     this._birthday = birthday;
   }
 
-  String get profession{
+  String get profession {
     return _profession;
   }
 
-  void set profession(String profession){
+  void set profession(String profession) {
     this._profession = profession;
   }
 
-  int get weight{
+  int get weight {
     return _weight;
   }
 
-  void set weight(int weight){
+  void set weight(int weight) {
     this._weight = weight;
   }
 
-  int get height{
+  int get height {
     return _height;
   }
 
-  void set height(int height){
+  void set height(int height) {
     this._height = height;
   }
 
-  String get phone{
+  String get phone {
     return _phone;
   }
 
-  void set phone(String phone){
+  void set phone(String phone) {
     this._phone = phone;
   }
 
-  String get email{
+  String get email {
     return _email;
   }
 
-  void set email(String email){
+  void set email(String email) {
     this._email = email;
   }
 
-  MedicalRecord get medicalRecord{
+  MedicalRecord get medicalRecord {
     return _medicalRecord;
   }
 
-  requestAppoinment(Doctor doctor){
+  requestAppoinment(Doctor doctor) {
     this.appointmentManager.requestAppoinment(doctor, this, DateTime.now());
   }
 
-  cancelAppointment(Appointment appointment){
+  cancelAppointment(Appointment appointment) {
     this.appointmentManager.cancelAppointment(appointment);
   }
 
+  @override
+  update(event) {
+    // TODO: implement update
+    print("NOTIFICACION");
+    print("$event");
+  }
 }
