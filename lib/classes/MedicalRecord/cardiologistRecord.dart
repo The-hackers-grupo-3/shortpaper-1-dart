@@ -1,8 +1,6 @@
+import 'package:shortpaper_dart/classes/MedicalRecord/medicalRecord.dart';
 import 'package:shortpaper_dart/classes/notifier.dart';
-
-import 'medicalRecord.dart';
-import '../patient.dart';
-import 'package:flutter/foundation.dart';
+import 'package:shortpaper_dart/classes/patient.dart';
 
 class CardiologistRecord extends MedicalRecord<CardiologistRecord> {
   int _QRSduration;

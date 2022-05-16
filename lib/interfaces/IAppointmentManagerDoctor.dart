@@ -1,7 +1,4 @@
-import 'package:shortpaper_dart/interfaces/specialty.dart';
-
-import '../classes/Appointment/appointment.dart';
-import '../classes/MedicalRecord/medicalRecord.dart';
+import 'package:shortpaper_dart/classes/Appointment/appointment.dart';
 
 abstract class IAppointmentManagerDoctor {
   void acceptAppointment(Appointment appointment);

@@ -1,11 +1,8 @@
 import 'package:shortpaper_dart/classes/Appointment/appointment.dart';
-import 'package:shortpaper_dart/interfaces/IAppointmentManagerDoctor.dart';
-import 'package:shortpaper_dart/interfaces/eventnotifier.dart';
-
-import '../enum/paymentStatus.dart';
-import '../interfaces/IAppointmentManagerPatient.dart';
-import 'MedicalRecord/medicalRecord.dart';
-import 'doctor.dart';
+import 'package:shortpaper_dart/classes/MedicalRecord/medicalRecord.dart';
+import 'package:shortpaper_dart/classes/doctor.dart';
+import 'package:shortpaper_dart/interfaces/IAppointmentManagerPatient.dart';
+import 'package:shortpaper_dart/interfaces/eventNotifier.dart';
 
 class Patient implements EventNotifier {
   String _name;
@@ -94,7 +91,7 @@ class Patient implements EventNotifier {
   }
 
   requestAppoinment(Doctor doctor) {
-    this.appointmentManager.requestAppoinment(doctor, this, DateTime.now());
+    appointmentManager.requestAppoinment(doctor, this, DateTime.now());
   }
 
   cancelAppointment(Appointment appointment) {

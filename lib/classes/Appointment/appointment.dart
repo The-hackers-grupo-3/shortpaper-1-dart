@@ -1,10 +1,8 @@
+import 'package:shortpaper_dart/classes/doctor.dart';
 import 'package:shortpaper_dart/classes/patient.dart';
 import 'package:shortpaper_dart/enum/medicalAppointmentState.dart';
 
-import '../doctor.dart';
-
-class Appointment{
-
+class Appointment {
   DateTime _appointmentDate;
   MedicalAppointmentState _status;
   Doctor _doctor;
@@ -39,5 +37,4 @@ class Appointment{
   Patient get patient {
     return _patient;
   }
-
 }
