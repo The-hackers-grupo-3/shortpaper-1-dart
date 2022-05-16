@@ -12,7 +12,10 @@ class AppointmentManagerImplPatient implements IAppointmentManagerPatient{
 
   @override
   void requestAppoinment(Doctor doctor, Patient patient, DateTime date) {
-    this._appointments.add(new Appointment(date, MedicalAppointmentState.PENDING, doctor, patient));
+    var appointment = new Appointment(date, MedicalAppointmentState.PENDING, doctor, patient);
+    this._appointments.add(appointment);
+    doctor.appointmentManager.seeAppointments().add(appointment);
+    
     print('El paciente ${patient.name} ha solicitado una cita al Doctor ${doctor.name} para el dia ${date}.');
   }
   
