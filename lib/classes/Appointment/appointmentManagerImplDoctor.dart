@@ -39,4 +39,10 @@ class AppointmentManagerImplDoctor implements IAppointmentManagerDoctor {
   List<Appointment> seeAppointments() {
     return this._appointments;
   }
+  
+  @override
+  void completeAppoinment(Appointment appointment, Specialty specialty, MedicalRecord medicalRecord) {
+    appointment.status = MedicalAppointmentState.COMPLETED;
+    print('La cita a culminado');
+  }
 }
