@@ -12,6 +12,12 @@
 
 ## Commits más relevantes
 
+| Miembro            | Tarea                                                                                                                                                                                                                                                                             | Commit significativo                               | Commit HASH                                  |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | -------------------------------------------- |
+| Rabindra Harichand | A los Pacientes les llegan noticaciones cuando el Doctor le hace un  cambio en su Historia Médica, por ejemplo. Las noticaciones pueden ocurrir para otros eventos en el futuro. Las noticaciones pueden llegar  por SMS, Noticaciones Push, Correo, Llamada Automática, etc. | Creación de las Notificaciones y patrón Observable | `<19217aaa0de5290c47449a32ebe17683e2a40b1c>` | 
+| Manuel De Olival   | Cita del Paciente                                                                                                                                                                                                                                                                 | Implementacion Appointment                         | `<b3f94071f241cb6164ecc32ed2b2264df306b0a9>` |
+
+
 ## Herramientas 🛠
 
 - **Dart** - Libreria para hacer los tests.
